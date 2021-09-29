@@ -1,11 +1,12 @@
 package entities;
 
 public class Product {
-	public String name;
-	public Double price;
-	public int quantity;
+	public String name; //null
+	public Double price; //null
+	public int quantity; //0
 
-	
+	public Product(){	
+	}
 	
 	//Construtor
 	public Product(String name, double price, int quantity) {
@@ -13,6 +14,12 @@ public class Product {
 		this.name 	  = name; //Atributo do objeto recebendo parametro do metodo.
 		this.price 	  = price;
 		this.quantity = quantity;
+	}
+	
+	public Product(String name, double price) {
+		//Exemplo sobrecarga, mesmo metodo, parametros diferentes!
+		this.name 	  = name;
+		this.price 	  = price;
 	}
 	
 	public double totalValueInStock() {
