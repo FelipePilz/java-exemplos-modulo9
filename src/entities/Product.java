@@ -1,9 +1,9 @@
 package entities;
 
 public class Product {
-	public String name; //null
-	public Double price; //null
-	public int quantity; //0
+	private String name; //null
+	private Double price; //null
+	private int quantity; //0
 
 	public Product(){	
 	}
@@ -22,6 +22,18 @@ public class Product {
 		this.price 	  = price;
 	}
 	
+	public double getPrice() {
+		return price;
+	}
+	
+	public int getQuantity(){
+		return quantity;
+		//Sem set quantity para proteger a consistencia do produto
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	public double totalValueInStock() {
 		return price * quantity;
 	}
@@ -33,7 +45,14 @@ public class Product {
 	public void removeProducts(int quantity) {
 		this.quantity -= quantity;
 	}
-
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	public String toString() {
 		return name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "+ String.format("%.2f", totalValueInStock());
 	}

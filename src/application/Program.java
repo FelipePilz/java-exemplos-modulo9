@@ -20,6 +20,13 @@ public class Program {
 		//Impedir de gerar um produto sem nome, sem preço ou sem quantidade.....
 		Product product = new Product(name, price);
 
+		
+		//Usando encapsulamento com get e set
+		product.setName("Computer");
+		System.out.println("Updated name: "+product.getName());
+		product.setPrice(1200.00);
+		System.out.println("Updated price: "+product.getPrice());
+		
 		System.out.println("Product data: " + product.toString());
 
 		System.out.println();
